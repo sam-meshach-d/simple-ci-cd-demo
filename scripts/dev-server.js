@@ -3,12 +3,13 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const port = process.env.PORT || 3000;
-const root = __dirname;
+const root = path.join(__dirname, "..");
 
 const contentTypes = {
   ".css": "text/css",
   ".html": "text/html",
   ".js": "text/javascript",
+  ".svg": "image/svg+xml",
 };
 
 const server = http.createServer((request, response) => {
