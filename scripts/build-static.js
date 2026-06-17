@@ -5,15 +5,14 @@ const root = path.join(__dirname, "..");
 const dist = path.join(root, "dist");
 
 fs.rmSync(dist, { recursive: true, force: true });
-fs.mkdirSync(path.join(dist, "assets"), { recursive: true });
+fs.mkdirSync(dist, { recursive: true });
 
 for (const file of ["index.html", "styles.css"]) {
   fs.copyFileSync(path.join(root, file), path.join(dist, file));
 }
 
-fs.copyFileSync(
-  path.join(root, "assets", "app.js"),
-  path.join(dist, "assets", "app.js"),
-);
+fs.cpSync(path.join(root, "assets"), path.join(dist, "assets"), {
+  recursive: true,
+});
 
 console.log("Built static site in dist/.");

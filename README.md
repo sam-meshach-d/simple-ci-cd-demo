@@ -49,7 +49,7 @@ npm test
 Start the website locally:
 
 ```bash
-npm start
+npm run dev
 ```
 
 ## Git Flow
