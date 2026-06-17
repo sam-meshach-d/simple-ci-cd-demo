@@ -50,5 +50,8 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Deploy static output
-        run: npx vercel@latest deploy dist --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Prepare Vercel static output
+        run: node scripts/build-vercel-output.js
+
+      - name: Deploy prebuilt static output
+        run: npx vercel@latest deploy --prebuilt --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
