@@ -1,0 +1,10 @@
+{
+  "name": "simple-ci-cd-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A tiny website for learning GitHub Actions CI and Vercel CD.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/site.test.js"
+  }
+}
